@@ -1,0 +1,63 @@
+/*
+color pallete
+https://coolors.co/ef476f-ffd166-06d6a0-118ab2-073b4c
+#EF476F Paradise Pink
+#FFD166 Orange Yellow Crayola
+#06D6A0 Caribbean Green
+#118AB2 Blue NCS
+#073B4C Midnight Grean Eagle Green
+#f7fff7 almost white
+*/
+
+
+/*Global Styles
+-----------------*/
+body {
+    color: #073B4C;
+}
+img{
+    width: 300px;
+}
+a{
+    color: #FFD166;
+}
+a:hover {
+    text-decoration: none;
+}
+/*Profile
+-----------------*/
+header {
+    background: #118AB2;
+    color: #f7fff7;
+}
+
+/*Projects
+-----------------*/
+.projects {
+    background: #06D6A0;
+}
+.projects a {
+    color: #f7fff7;
+    background: #073B4C;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+}
+.projects a:hover {
+    background: rgba(7, 59, 76, 80%);
+}
+/*Work Experience
+-----------------*/
+.work-experience {
+    background: #FFD166;
+}
+
+/*Education
+-----------------*/
+
+/*Contact Info
+-----------------*/
+footer {
+    background: #EF476F;
+    color: #f7fff7;
+}
