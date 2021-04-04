@@ -18,6 +18,12 @@ html{
 *,*:before, *:after {
     box-sizing: inherit;
 }
+html,body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
 body {
     color: #073B4C;
     margin: 0;
@@ -35,9 +41,51 @@ a:hover {
     text-decoration: none;
 }
 .content-wrap {
-    width: 800px;
+    max-width: 800px;
+    width: 85%;
     margin: 0 auto;
     padding: 2px 0;
+}
+nav ul {
+    list-style: none;
+    text-align: left;
+    font: bold 12px/18px;
+}
+nav ul li {
+    display: inline-block;
+    position: relative;
+    padding: 15px 25px;
+    background: #073B4C;
+    cursor: pointer;
+}
+nav ul li:hover{
+    background: #90BEDE;
+    color: #073B4C;
+}
+nav ul li ul {
+    padding: 0;
+    position: absolute;
+    top: 48px;
+    left: -1000px;
+    width: 150px
+}
+nav ul li ul li {
+    background: #90BEDE;
+    display: block;
+    color: #f7fff7;
+}
+nav ul li ul li:hover {
+    background: #B0D1E8;
+}
+nav ul li:hover ul {
+    display: block; 
+    left: 0px;
+}
+#checkbox {
+    display: none;						/* Although the checkbox functionality is needed, we don't want to see the actual checkbox */
+}
+#checkbox:checked ~ nav ul {
+    max-height: 11em;					/* When the checkbox is checked, expand the height of ul to reveal navigation */
 }
 h1 {
     font-size: 98px;
@@ -53,6 +101,26 @@ h1,h2 {
     font-weight: 400;
     margin: 0;
 }
+h3 {
+    margin-bottom: 0px;
+}
+.divider > section {
+    border-bottom: 1px dashed #073B4C;
+    padding: 25px 0;
+}
+.divider > section:last-of-type {
+    border-bottom: none;
+}
+.item-details h3 + p {
+    font-style: italic;
+}
+.item-details h3 ~ p {
+    margin: 0px;
+}
+.row {
+    background-color: #FFD166;
+    padding: 28px 20px;
+}
 /*Profile
 -----------------*/
 header {
@@ -63,8 +131,10 @@ header {
 /*Projects
 -----------------*/
 .projects {
-    background: #06D6A0;
+    background: #FFD166;
 }
+        /*Buttons
+-----------------*/
 .projects a {
     color: #f7fff7;
     background: #073B4C;
@@ -79,29 +149,81 @@ header {
 .project-item {
     overflow: hidden;
     border-bottom: 1px dashed #073B4C;
+    margin: 0 -1px;
     padding: 25px 0;
-    background: #06D6A0;
+    background: #FFD166;
 }
-.project-item img {
-    float: left;
-    margin-right: 20px;
-}
+
 .project-item h3 {
     margin-top: 0;
 }
 /*Work Experience
 -----------------*/
 .work-experience {
-    background: #FFD166;
-   
+    background: #06D6A0;
 }
 
 /*Education
 -----------------*/
+.education {
+    background-image: url(../images/joanna-kosinska-unsplash.jpg);
+    background-size: cover;
+    background-position: top right;
+    padding-bottom: 100px;
+}
+.education p {
+    width: 60%;
+}
 
 /*Contact Info
 -----------------*/
 footer {
     background: #EF476F;
     color: #f7fff7;
+}
+
+.contact-list {
+    list-style-type: none;
+    padding: 0%;
+}
+
+.contact-list a {
+    padding: 15px;
+    display: inline-block;
+}
+/*Styles for Hamburger
+-----------------*/
+
+/*Responsive
+-----------------*/
+@media screen and (min-width:750px) {
+    header, footer {
+        text-align: center;
+    }
+    .project-item img {
+        float: left;
+        margin-right: 20px;
+    }
+
+    .job-item {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 20px;
+    }
+    .contact-list {
+        display: flex;
+        justify-content: center;
+    }
+}
+@media screen and (max-width:749px){
+    h1 {
+        font-size: 75px;
+        line-height: 75px;
+    }
+    h2 {
+        line-height: 75px;
+    }
+    .contact-list a {
+        padding: 5px;
+    }
 }

@@ -1,0 +1,152 @@
+/* Megan Dunn 04/02/2021 WEB 210 Hamburger Menu*/
+/*
+Color Pallete
+https://coolors.co/ef476f-ffd166-06d6a0-118ab2-073b4c
+#EF476F Paradise Pink
+#FFD166 Orange Yellow Crayola
+#06D6A0 Caribbean Green
+#118AB2 Blue NCS
+#073B4C Midnight Grean Eagle Green
+#f7fff7 Almost White
+*/
+
+
+/* mobile first */
+
+* {
+    margin: 0;							/* Set general page settings for font, margins and padding */
+    padding: 0;
+    font-family: sans-serif;
+}
+
+
+/* General page styles */
+h2 {
+    font-family: sans-serif;
+}
+footer {
+    background: #EF476F;
+    color: #f7fff7;
+    text-align: center;
+}
+/*Fixed Footer and Styles*/
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #EF476F;
+    color: #f7fff7;
+    text-align: center;
+ }
+/*Hamburger Menu and Style*/
+
+.menu-wrap {							/* .menu-wrap contains all parts of our responsive navigation */
+    height: 3em;						/* Set defaut height for navigation */
+    background-color: #118AB2;				/* Set background color for entire navigation (useful for horizontal menu)*/
+    padding: 10px 15px;					/* Set padding around navigation */
+    /*position: fixed;*/				/* Uncomment out this line to lock navigation to top of window when scolling */
+    width: 100%;						/* Have navigation fill entire horizontal space */
+}
+.menu-icon {
+    font-size: 2em;						/* Set size of hamburger menu icon */
+    color: #fff;						/* Set color of hamburger menu icon */
+}
+/*Navigation Bar and Styles*/
+
+nav {
+    position: absolute;					/* Absolute positions nav on page */
+    background-color: #118AB2;				/* Set background color for nav (useful when nav becomes vertical)*/
+    top: 3.5em;							/* Add space to top of screen so links are below hamburger icon */
+    left:0;								/* Navigation links should appear on left side of screen */
+    width: 100%;						/* Similar to .menu-wrap, nav should fill entire horizontal space */
+}
+nav ul {
+    list-style-type: none;				/* Get rid of bullets on unordered list (navigation links) */
+    max-height: 0em;					/* Section containing navigation links should be collapsed until hamburger menu icon is toggled */
+    overflow: hidden;					/* Content of collapsed section should be hidden */
+    transition: max-height 0.5s;		/* Transition between opening and closing of navigation should take 0.5 seconds */ 
+}
+nav ul li a {
+    display: block;						/* Links should be dispayed as block (eack link taking up its required space on a new line) */
+    padding: .75em 1.75em;				/* Set padding for each navigation link */
+    color: #fff;						/* Set color for navigation links */
+    text-decoration: none;				/* Get rid of underlines on navigation links */
+}
+nav ul li a:hover, nav ul li a:focus {
+    color: #EF476F;						/* Change color of link when hovered over or focused on */
+}
+/*Checkbox and Styles*/
+
+#checkbox {
+    display: none;						/* Although the checkbox functionality is needed, we don't want to see the actual checkbox */
+}
+#checkbox:checked ~ nav ul {
+    max-height: 11em;					/* When the checkbox is checked, expand the height of ul to reveal navigation */
+}
+/*Gallery grid/images/styles*/
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  background-color: #FFD166;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0px;
+  background-color: #FFD166;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+
+/* Responsive Hamburger Menu desktop/large screen settings */
+
+@media (min-width: 768px) { 			/* Media Query for larger screens */
+    .menu-icon {
+        display: none;					/* Hide hamburger menu icon on larger screens */
+    }
+    nav {
+        position: relative;				
+        top: -1em;						/* Move navigation links up (as they no longer need to be below hamburger icon) */
+    }
+    nav ul {
+        max-height: 0.75em;				/* Adjust max-height to fit content horizontally rather than vertically */
+        padding: 15px 0;
+    }
+    nav ul li {
+        display: inline-block;			/* Display list items as an inline-block (on a single line) */
+        padding-left: 1em;				/* Add padding between horizontal links */
+    }
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .gallery {
+      flex: 50%;
+      max-width: 50%;
+    }
+
+}
